@@ -27,7 +27,7 @@ summary: "The functions that propagates small changes in the library back to not
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The library is primarily developed in notebooks so any big changes should be made there. But sometimes, it's easier to fix small bugs or typos in the modules directly. <a href="sync.html#script2notebook"><code>script2notebook</code></a> is the function that will propagate those changes back to the corresponding notebooks. Note that you can't create new cells with that functionality, so your corrections should remain limited.</p>
+<p>The library is primarily developed in notebooks so any big changes should be made there. But sometimes, it's easier to fix small bugs or typos in the modules directly. <a href="http://nbdev.fast.ai/sync#script2notebook"><code>script2notebook</code></a> is the function that will propagate those changes back to the corresponding notebooks. Note that you can't create new cells with that functionality, so your corrections should remain limited.</p>
 
 </div>
 </div>
@@ -140,7 +140,7 @@ summary: "The functions that propagates small changes in the library back to not
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="source_nb" class="doc_header"><code>source_nb</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/sync.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>source_nb</code>(<strong><code>func</code></strong>, <strong><code>is_name</code></strong>=<em><code>None</code></em>, <strong><code>return_all</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="source_nb" class="doc_header"><code>source_nb</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/sync.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>source_nb</code>(<strong><code>func</code></strong>, <strong><code>is_name</code></strong>=<em><code>None</code></em>, <strong><code>return_all</code></strong>=<em><code>False</code></em>, <strong><code>mod</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Return the name of the notebook where <code>func</code> was defined</p>
 
@@ -156,7 +156,7 @@ summary: "The functions that propagates small changes in the library back to not
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can either pass an object or its name (by default <code>is_name</code> will look if <code>func</code> is a string or not to determine if it should be <code>True</code> or <code>False</code>, but you can override if there is some inconsistent behavior).</p>
 <p>If passed a method of a class, the function will return the notebook in which the largest part of the function name was defined in case there is a monkey-matching that defines <code>class.method</code> in a different notebook than <code>class</code>. If <code>return_all=True</code>, the function will return a tuple with the name by which the function was found and the notebook.</p>
-<p>For properties defined using <code>property</code> or our own <code>add_props</code> helper, we approximate the name by looking at their getter functions, since we don't seem to have access to the property name itself. If everything fails (a getter cannot be found), we return the name of the object that contains the property. This suffices for <a href="sync.html#source_nb"><code>source_nb</code></a> to work.</p>
+<p>For properties defined using <code>property</code> or our own <code>add_props</code> helper, we approximate the name by looking at their getter functions, since we don't seem to have access to the property name itself. If everything fails (a getter cannot be found), we return the name of the object that contains the property. This suffices for <a href="http://nbdev.fast.ai/sync#source_nb"><code>source_nb</code></a> to work.</p>
 
 </div>
 </div>
@@ -208,7 +208,7 @@ summary: "The functions that propagates small changes in the library back to not
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="relimport2name" class="doc_header"><code>relimport2name</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/sync.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>relimport2name</code>(<strong><code>name</code></strong>, <strong><code>mod_name</code></strong>)</p>
+<h4 id="relimport2name" class="doc_header"><code>relimport2name</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/sync.py#L64" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>relimport2name</code>(<strong><code>name</code></strong>, <strong><code>mod_name</code></strong>)</p>
 </blockquote>
 <p>Unwarps a relative import in <code>name</code> according to <code>mod_name</code></p>
 
@@ -274,7 +274,7 @@ summary: "The functions that propagates small changes in the library back to not
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="script2notebook" class="doc_header"><code>script2notebook</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/sync.py#L113" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>script2notebook</code>(<strong><code>fname</code></strong>=<em><code>None</code></em>, <strong><code>silent</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="script2notebook" class="doc_header"><code>script2notebook</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/sync.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>script2notebook</code>(<strong><code>fname</code></strong>=<em><code>None</code></em>, <strong><code>silent</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Update the notebooks from any changes made in the modules corresponding to <code>fname</code></p>
 
@@ -322,7 +322,7 @@ summary: "The functions that propagates small changes in the library back to not
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="diff_nb_script" class="doc_header"><code>diff_nb_script</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/sync.py#L129" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>diff_nb_script</code>()</p>
+<h4 id="diff_nb_script" class="doc_header"><code>diff_nb_script</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/sync.py#L130" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>diff_nb_script</code>()</p>
 </blockquote>
 <p>Print the diff between the notebooks and the library in lib_path</p>
 

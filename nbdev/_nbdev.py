@@ -14,6 +14,7 @@ index = {"read_nb": "00_export.ipynb",
          "save_nbdev_module": "00_export.ipynb",
          "create_mod_file": "00_export.ipynb",
          "add_init": "00_export.ipynb",
+         "update_version": "00_export.ipynb",
          "notebook2script": "00_export.ipynb",
          "DocsTestClass": "00_export.ipynb",
          "get_name": "01_sync.ipynb",
@@ -24,6 +25,7 @@ index = {"read_nb": "00_export.ipynb",
          "diff_nb_script": "01_sync.ipynb",
          "is_enum": "02_showdoc.ipynb",
          "is_lib_module": "02_showdoc.ipynb",
+         "try_external_doc_link": "02_showdoc.ipynb",
          "doc_link": "02_showdoc.ipynb",
          "add_doc_links": "02_showdoc.ipynb",
          "get_source_link": "02_showdoc.ipynb",
@@ -101,7 +103,10 @@ modules = ["export.py",
            "cli.py",
            "tutorial.py"]
 
+doc_url = "http://nbdev.fast.ai/"
+
 git_url = "https://github.com/fastai/nbdev/tree/master/"
 
-
-def custom_doc_links(name): return None
+def custom_doc_links(name): 
+    a=1
+    return None

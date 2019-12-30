@@ -177,7 +177,7 @@ def clean_cell_output(cell):
 
 # Cell
 cell_metadata_keep = ["hide_input"]
-nb_metadata_keep   = ["kernelspec", "jekyll"]
+nb_metadata_keep   = ["kernelspec", "jekyll", "jupytext"]
 
 # Cell
 def clean_cell(cell, clear_all=False):
@@ -280,6 +280,7 @@ def nbdev_bump_version(part:Param("Part of version to bump", int)=2):
     print(f'Old version: {cfg.version}')
     cfg.d['version'] = bump_version(Config().version, part)
     cfg.save()
+    update_version()
     print(f'New version: {cfg.version}')
 
 # Cell
