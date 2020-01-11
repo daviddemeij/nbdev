@@ -36,9 +36,14 @@ class HTMLParseAttrs(HTMLParser):
         return self.attrs
 
 # Cell
+#Matches any cell with #allow_widget
+_re_cell_allow_widget = re.compile(r'^\s*#\s*(allow_widget)\s+')
+
+# Cell
 def remove_widget_state(cell):
-    "Remove widgets in the output of `cells`"
-    if cell['cell_type'] == 'code' and 'outputs' in cell:
+    "Remove widgets in the output of `cells` if the cell does not include an #allow_widget tag"
+    allow_widget = _re_cell_allow_widget.search(cell['source']) is not None
+    if cell['cell_type'] == 'code' and 'outputs' in cell and not allow_widget:
         cell['outputs'] = [l for l in cell['outputs']
                            if not ('data' in l and 'application/vnd.jupyter.widget-view+json' in l.data)]
     return cell
